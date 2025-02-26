@@ -108,6 +108,7 @@ class MyApp extends StatelessWidget {
       }
       trainState.setTrains(AppIsarDatabase.getTrains());
     }
+
     if (DateTime.now().isAfter(trainState.getTrains.lastWhere((e) => e.isFirstDate!).dateTime!.add(Duration(days: 7 * 12)))){
       List<DateTime> randomDates = _generateUniqueRandomDates(12, 4);
       randomDates.sort((a, b) => a.compareTo(b));
